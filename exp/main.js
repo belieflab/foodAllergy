@@ -154,7 +154,7 @@ let stimuli = {
         responseKey = '';
     } else {
         data.accuracy = '';
-        data.percent_confidence = 0;
+        data.percent_confidence = '';
         responseKey = '';
     }
     }
