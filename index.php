@@ -11,8 +11,8 @@ file_put_contents($name, $data);
 <html>
   <head>
     <title>Food Allergy</title>
-    <script src="db/submit.js"></script>
-    <script src="db/validate.js"></script>
+    <!-- <script src="db/submit.js"></script>
+    <script src="db/validate.js"></script> -->
     <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jsPsych/plugins/jspsych-image-keyboard-response.js"></script>
@@ -21,7 +21,7 @@ file_put_contents($name, $data);
     <link rel="stylesheet" type="text/css" href="css/w3.css"> <!-- styling for w3c progress bars -->
   </head>
     <body style="background-color:white;">  
-      <?php include 'include/intake.php'?>
+      <?php include 'include/consent.php'?>
     </body>
   <footer>
 

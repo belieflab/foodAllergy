@@ -131,11 +131,11 @@ let stimuli = {
     //     });
     //     data.confidence = output.text(last - n);
     // }
-    data.subject_key = 'GUID';
-    data.src_subject_id = workerId;
-    data.interview_date = today;
-    data.interview_age = ageAtAssessment;
-    data.sex = sexAtBirth;
+    // data.subject_key = 'GUID';
+    // data.src_subject_id = workerId;
+    // data.interview_date = today;
+    // data.interview_age = ageAtAssessment;
+    // data.sex = sexAtBirth;
     if (data.key_press == data.correct_response) {
         data.accuracy = true;
         data.percent_confidence = totalConfidence;
