@@ -21,7 +21,7 @@ function moveConfidence(event) { // function definition
       jsPsych.finishTrial();  
       // return (event.charCode == 48 || event.charCode == 49)
     } else {
-      width+= 3.34;
+      width+= 3.45;
       console.log(width);
       totalConfidence = width;
       trialComplete = 0;
