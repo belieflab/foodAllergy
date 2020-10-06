@@ -145,11 +145,11 @@ let stimuli = {
     data.response = responseKey;
 
     if (responseKey == data.correct_response) {
-        data.accuracy = true;
+        data.accuracy = 1;
         data.percent_confidence = totalConfidence;
         responseKey = '';
     } else if (responseKey == data.incorrect_response) {
-        data.accuracy = false;
+        data.accuracy = 0;
         data.percent_confidence = totalConfidence;
         responseKey = '';
     } else {
@@ -211,10 +211,9 @@ timeline.push(practice_procedure);
 
 let instructions_6 = {
     type: "html-keyboard-response",
-    stimulus: '<p style="color:black;">Let us begin! Press the spacebar when you are ready to start the experiment.</p>'+
-            '<p style="color:black;">The first part of the experiment should last about 20 minutes with breaks in-between. After you finish, you will be directed to the 2nd part of the experiment which is a survey (about 20-30 minutes).</p>'+
-            '<br>'+
-            '<p style="color:black;">Good Luck!</p>',
+    stimulus: '<h2 style="color:black;">Let us begin! Press the spacebar when you are ready to start the experiment.</h2>'+
+            '<h3 style="color:black;">The first part of the experiment should last about 20 minutes with breaks in-between. After you finish, you will be directed to the 2nd part of the experiment which is a survey (about 20-30 minutes).</h3>'+
+            '<p style="color:black;">Press the spacebar to begin. Good Luck!</p>',
     choices: [32],
 
 };
