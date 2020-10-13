@@ -62,5 +62,9 @@ function startExperiment(){
   });
 }
 
-
+  //onbeforeunload in body
+  function areYouSure() {
+    return "Write something clever here...";
+  }
+  areYouSure();
 
