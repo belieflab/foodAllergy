@@ -196,41 +196,66 @@ let learning_procedure = {
     timeline_variables: learning_stimuli,
     randomize_order: true,
     type: 'fixed-repititions',
-    repetitions: 10
+    repetitions: 1
 }
 
 timeline.push(learning_procedure);
 
-let blocking_procedure = {
-    timeline: [fixation, stimuli, feedback],
-    timeline_variables: blocking_stimuli,
-    randomize_order: true,
-    type: 'fixed-repititions',
-    repetitions: 6
-}
+// let blocking_procedure = {
+//     timeline: [fixation, stimuli, feedback],
+//     timeline_variables: blocking_stimuli,
+//     randomize_order: true,
+//     type: 'fixed-repititions',
+//     repetitions: 6
+// }
 
-timeline.push(blocking_procedure);
+// timeline.push(blocking_procedure);
 
-let testing_procedure = {
-    timeline: [fixation, stimuli, feedback],
-    timeline_variables: testing_stimuli,
-    randomize_order: true,
-    type: 'fixed-repititions',
-    repetitions: 6
-}
+// let testing_procedure = {
+//     timeline: [fixation, stimuli, feedback],
+//     timeline_variables: testing_stimuli,
+//     randomize_order: true,
+//     type: 'fixed-repititions',
+//     repetitions: 6
+// }
 
-timeline.push(testing_procedure);
+// timeline.push(testing_procedure);
 
 //COMPLETION MESSAGE: Completed Classification Phase
 
-let qualtricsSurvey = {
+let save_data = {
     type: "html-keyboard-response",
-    stimulus: '<p style="color:black;">You have now completed the task! Saving data...PLEASE DO NOT CLOSE THIS BROWSER until you complete the second part.</p> ' +
-        '<p style="color:black;">BEFORE THE LINK DISAPPEARS please move on to the second part of the task at this link to obtain your completion code:</p> ' +
-        "<a href=" + qualtrics + ' target="_blank">' + qualtrics + "</a>",
+    stimulus: "<p>Data saving...</p>"+
+    '<div class="sk-cube-grid">'+
+  '<div class="sk-cube sk-cube1"></div>'+
+  '<div class="sk-cube sk-cube2"></div>'+
+  '<div class="sk-cube sk-cube3"></div>'+
+  '<div class="sk-cube sk-cube4"></div>'+
+  '<div class="sk-cube sk-cube5"></div>'+
+  '<div class="sk-cube sk-cube6"></div>'+
+  '<div class="sk-cube sk-cube7"></div>'+
+  '<div class="sk-cube sk-cube8"></div>'+
+  '<div class="sk-cube sk-cube9"></div>'+
+  '</div>'+
+    "<p>Do not close this window until the text dissapears.</p>",
+  
     choices: jsPsych.NO_KEYS,
-    trial_duration: 10000,
+    trial_duration: 5000,
+    on_finish: function(){
+      saveData("pessiglione_" + workerId, jsPsych.data.get().csv());
+    }
+  };
+
+timeline.push(save_data);
+
+let qualtrics_survey = {
+    type: "html-keyboard-response",
+    stimulus: "<p style='color:black;'>Thank you!</p>"+
+    "<p style='color:black;'>You have successfully completed the experiment and your data has been saved.</p>"+
+    '<p style="color:black;">Please move on to the second part of the experiment at this link:</p> ' +
+        "<a href=" + qualtrics + ' target="_blank">' + qualtrics + "</a>"+
+        '<p style="color:black;">After completing the survey you will obtain your completion code.</p> ',
+    choices: jsPsych.NO_KEYS,
+    // trial_duration: 60000,
 };
-timeline.push(qualtricsSurvey);
-
-
+timeline.push(qualtrics_survey);
