@@ -74,8 +74,8 @@ window.onload = function() {
     Please return the HIT.</p>
 </div>
   <div id="nextButtonHolder" class="buttonHolder">
-  <button id="nextButton" onclick="startExperiment()">CONSENT/NEXT</button>
-  <script>$(document).ready(function(){$("button.nextButton").click(function(){
+  <button id="nextButton" class="Exp" onclick="startExperiment()">CONSENT/NEXT</button>
+  <script>$(document).ready(function(){$("button.Exp").click(function(){
         // $("body").addClass("noClick");
       $("body").addClass("hideCursor");
 
