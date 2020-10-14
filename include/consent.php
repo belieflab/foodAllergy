@@ -79,6 +79,7 @@ window.onload = function() {
   <script>$(document).ready(function(){$("button.Exp").click(function(){
         // $("body").addClass("noClick");
       $("body").addClass("hideCursor");
+      $("#tapTap").attr("autocomplete", "off"); //disable input level 
   });
   }); </script>
 </div>
