@@ -24,7 +24,6 @@ file_put_contents($name, $data);
       <?php include_once 'include/consent.php'?>
     </body>
   <footer>
-
     <script type="text/javascript" src="exp/fn.js"></script>
     <script type="text/javascript" src="exp/var.js"></script>
     <script type="text/javascript" src="exp/conf.js"></script>

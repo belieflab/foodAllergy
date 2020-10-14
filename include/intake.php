@@ -78,7 +78,6 @@
 <script>$(document).ready(function(){$("button.startExp").click(function(){
         // $("body").addClass("noClick");
       $("body").addClass("hideCursor");
-
     // $.getScript("exp/main.js");
     // $.getScript("exp/timeline.js");
     // $.load("include/consent.php");

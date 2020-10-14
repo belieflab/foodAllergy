@@ -75,13 +75,10 @@ window.onload = function() {
 </div>
   <div id="nextButtonHolder" class="buttonHolder">
   <button id="nextButton" class="Exp" onclick="startExperiment()">CONSENT/NEXT</button>
+  <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
   <script>$(document).ready(function(){$("button.Exp").click(function(){
         // $("body").addClass("noClick");
       $("body").addClass("hideCursor");
-
-    // $.getScript("exp/main.js");
-    // $.getScript("exp/timeline.js");
-    // $.load("include/consent.php");
   });
   }); </script>
 </div>
