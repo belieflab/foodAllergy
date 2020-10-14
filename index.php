@@ -21,7 +21,7 @@ file_put_contents($name, $data);
     <link rel="stylesheet" type="text/css" href="css/w3.css"> <!-- styling for w3c progress bars -->
   </head>
     <body onbeforeunload="return areYouSure()" style="background-color:white;">  
-      <?php include 'include/consent.php'?>
+      <?php include_once 'include/consent.php'?>
     </body>
   <footer>
 
