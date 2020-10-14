@@ -75,11 +75,14 @@
 <br>
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
-<script>$("button.loadMain").click(function(){
-      // $.getScript("exp/timeline.js");
+<script>$(document).ready(function(){$("button.startExp").click(function(){
+        // $("body").addClass("noClick");
+      $("body").addClass("hideCursor");
+
     // $.getScript("exp/main.js");
     // $.getScript("exp/timeline.js");
     // $.load("include/consent.php");
+  });
   }); </script>
 <script>
 </script>
