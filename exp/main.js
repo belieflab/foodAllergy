@@ -99,8 +99,10 @@ let stimuli = {
                 if (barFill.innerHTML = 'Hold response key to indicate confidence level.') { // reused from eefrt, just needed a placeholder here
                   if (keycode == 48) {
                     document.getElementById("counter").setAttribute("onkeydown", "return moveConfidence()"); // event.charCode allows us to set specific keys to use 
+                    responseKey = 48;
                   } else if (keycode == 49) {
                     document.getElementById("counter").setAttribute("onkeydown", "return moveConfidence()"); // event.charCode allows us to set specific keys to use 
+                    responseKey = 49;
                   } else { // all other keys ignored
                     document.getElementById("counter").setAttribute("onkeydown", "return false"); // event.charCode allows us to set specific keys to use 
                   }
@@ -242,7 +244,7 @@ let save_data = {
     choices: jsPsych.NO_KEYS,
     trial_duration: 5000,
     on_finish: function(){
-      saveData("pessiglione_" + workerId, jsPsych.data.get().csv());
+      saveData("kamin-blocking_" + workerId, jsPsych.data.get().csv());
       document.getElementById("unload").onbeforeunload='';
       $(document).ready(function(){
       $("body").addClass("showCursor"); // returns cursor functionality
