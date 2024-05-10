@@ -105,330 +105,304 @@ let practice_stimuli = [
     }, // 1 key
 ];
 
+// cues within shuffledStim: standard version (until 11), short (until 13). SCdO 07/may/2024
+//                 0   1   2   3   4   5   6   7   8   9   10  11
+// stim_shuffle = [A,  B,  C,  D,  E,  F,  G,  H,  I,  J,  K,  L]
+
 let learning_stimuli_standard = [
+     // 1 key correct
     {
         stimulus: shuffledStim[0],
         stimulus2: null,
         data: {
             test_part: "learning",
             reaction: "allergy",
-            condition: "single-positive",
-            trial_type: "A1+",
+            trial_identity: "A+",
             correct_response: 49, // allergy (1)
             incorrect_response: 48, // no-allergy (0)
             stim_left: shuffledStim[0].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 1 key
-    {
-        stimulus: shuffledStim[1],
-        stimulus2: null,
-        data: {
-            test_part: "learning",
-            reaction: "allergy",
-            condition: "single-positive",
-            trial_type: "A2+",
-            correct_response: 49,
-            incorrect_response: 48,
-            stim_left: shuffledStim[1].slice(8),
-            stim_right: "",
-            version: iteration,
-        },
-    }, // 1 key
+    }, // 1 key correct
     {
         stimulus: shuffledStim[4],
         stimulus2: null,
         data: {
             test_part: "learning",
-            reaction: "no-reaction",
-            condition: "single-negative",
-            trial_type: "C1-",
-            correct_response: 48,
-            incorrect_response: 49,
+            reaction: "allergy",
+            trial_identity: "E+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (0)
             stim_left: shuffledStim[4].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 0 key
+    }, // 0 key correct
     {
-        stimulus: shuffledStim[5],
+        stimulus: shuffledStim[8],
         stimulus2: null,
         data: {
             test_part: "learning",
             reaction: "no-reaction",
-            condition: "single-negative",
-            trial_type: "C2-",
-            correct_response: 48,
-            incorrect_response: 49,
-            stim_left: shuffledStim[5].slice(8),
+            trial_identity: "I-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
+            stim_left: shuffledStim[8].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 0 key
-    {
-        stimulus: shuffledStim[9],
-        stimulus2: null,
-        data: {
-            test_part: "learning",
-            reaction: "no-reaction",
-            condition: "single-negative",
-            trial_type: "F-",
-            correct_response: 48,
-            incorrect_response: 49,
-            stim_left: shuffledStim[9].slice(8),
-            stim_right: "",
-            version: iteration,
-        },
-    }, // 0 key
+    }, // 0 key correct
     {
         stimulus: shuffledStim[10],
         stimulus2: null,
         data: {
             test_part: "learning",
-            reaction: "allergy",
-            condition: "single-positive",
-            trial_type: "I+",
-            correct_response: 49,
-            incorrect_response: 48,
+            reaction: "no-reaction",
+            trial_identity: "K-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
             stim_left: shuffledStim[10].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 1 key
-    {
-        stimulus: shuffledStim[11],
-        stimulus2: null,
-        data: {
-            test_part: "learning",
-            reaction: "no-reaction",
-            condition: "single-negative",
-            trial_type: "J-",
-            correct_response: 48,
-            incorrect_response: 49,
-            stim_left: shuffledStim[11].slice(8),
-            stim_right: "",
-            version: iteration,
-        },
-    }, // 0 key
+    },
 ];
 
+// cues within shuffledStim: standard version (until 11), short (until 13). SCdO 07/may/2024
+//                 0   1   2   3   4   5   6   7   8   9   10  11
+// stim_shuffle = [A,  B,  C,  D,  E,  F,  G,  H,  I,  J,  K,  L]
+
 let blocking_stimuli_standard = [
+    // 1 key correct
     {
         stimulus: shuffledStim[0],
-        stimulus2: shuffledStim[2],
+        stimulus2: shuffledStim[1],
         data: {
             test_part: "blocking",
             reaction: "allergy",
-            condition: "blocking",
-            trial_type: "A1B1+",
-            correct_response: 49,
-            incorrect_response: 48,
+            trial_identity: "AB+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy
             stim_left: shuffledStim[0].slice(8),
-            stim_right: shuffledStim[2].slice(8),
+            stim_right: shuffledStim[1].slice(8),
             version: iteration,
         },
-    }, // 1 key
+    }, // 1 key correct
     {
-        stimulus: shuffledStim[1],
+        stimulus: shuffledStim[2],
         stimulus2: shuffledStim[3],
         data: {
             test_part: "blocking",
             reaction: "allergy",
-            condition: "blocking",
-            trial_type: "A2B2+",
-            correct_response: 49,
-            incorrect_response: 48,
-            stim_left: shuffledStim[1].slice(8),
+            trial_identity: "CD+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy
+            stim_left: shuffledStim[2].slice(8),
             stim_right: shuffledStim[3].slice(8),
             version: iteration,
         },
-    }, // 1 key
+    }, // 0 key correct
     {
         stimulus: shuffledStim[4],
-        stimulus2: shuffledStim[6],
-        data: {
-            test_part: "blocking",
-            reaction: "allergy",
-            condition: "blocking-control",
-            trial_type: "C1D1+",
-            correct_response: 49,
-            incorrect_response: 48,
-            stim_left: shuffledStim[4].slice(8),
-            stim_right: shuffledStim[6].slice(8),
-            version: iteration,
-        },
-    }, // 1 key
-    {
-        stimulus: shuffledStim[5],
-        stimulus2: shuffledStim[7],
-        data: {
-            test_part: "blocking",
-            reaction: "allergy",
-            condition: "blocking-control",
-            trial_type: "C2D2+",
-            correct_response: 49,
-            incorrect_response: 48,
-            stim_left: shuffledStim[5].slice(8),
-            stim_right: shuffledStim[7].slice(8),
-            version: iteration,
-        },
-    }, // 1 key
-    {
-        stimulus: shuffledStim[8],
-        stimulus2: shuffledStim[9],
+        stimulus2: shuffledStim[5],
         data: {
             test_part: "blocking",
             reaction: "no-reaction",
-            condition: "no-allergy-control",
-            trial_type: "EF-",
-            correct_response: 48,
-            incorrect_response: 49,
-            stim_left: shuffledStim[8].slice(8),
-            stim_right: shuffledStim[9].slice(8),
+            trial_identity: "EF-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
+            stim_left: shuffledStim[4].slice(8),
+            stim_right: shuffledStim[5].slice(8),
             version: iteration,
         },
-    }, // 0 key
+    }, // 0 key correct
+    {
+        stimulus: shuffledStim[6],
+        stimulus2: shuffledStim[7],
+        data: {
+            test_part: "blocking",
+            reaction: "no-reaction",
+            trial_identity: "GH-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
+            stim_left: shuffledStim[6].slice(8),
+            stim_right: shuffledStim[7].slice(8),
+            version: iteration,
+        },
+    }, // 1 key correct
+    {
+        stimulus: shuffledStim[8],
+        stimulus2: null,
+        data: {
+            test_part: "blocking",
+            reaction: "allergy",
+            trial_identity: "I+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (0)
+            stim_left: shuffledStim[8].slice(8),
+            stim_right: "",
+            version: iteration,
+        },
+    }, // 1 key correct
+    {
+        stimulus: shuffledStim[9],
+        stimulus2: null,
+        data: {
+            test_part: "blocking",
+            reaction: "allergy",
+            trial_identity: "J+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (0)
+            stim_left: shuffledStim[9].slice(8),
+            stim_right: "",
+        },
+    }, // 0 key correct
     {
         stimulus: shuffledStim[10],
         stimulus2: null,
         data: {
             test_part: "blocking",
-            reaction: "allergy",
-            condition: "consistent-allergy",
-            trial_type: "I+",
-            correct_response: 49,
-            incorrect_response: 48,
+            reaction: "no-reaction",
+            trial_identity: "K-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
             stim_left: shuffledStim[10].slice(8),
             stim_right: "",
         },
-    }, // 1 key
+    }, // 0 key
     {
         stimulus: shuffledStim[11],
         stimulus2: null,
         data: {
             test_part: "blocking",
             reaction: "no-reaction",
-            condition: "consistent-no-allergy",
-            trial_type: "J-",
-            correct_response: 48,
-            incorrect_response: 49,
+            trial_identity: "L-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
             stim_left: shuffledStim[11].slice(8),
             stim_right: "",
         },
-    }, // 0 key
+    }
 ];
 
 // cues within shuffledStim: standard version (until 11), short (until 13). SCdO 07/may/2024
-//                 0   1   2   3   4   5   6   7    8   9   10  11  12  13
-// shuffledStim = [A1, A2, B1, B2, C1, C2, D1, D2,  E,  F,  I,  J,  K,  L]
-
+//                 0   1   2   3   4   5   6   7   8   9   10  11
+// stim_shuffle = [A,  B,  C,  D,  E,  F,  G,  H,  I,  J,  K,  L]
 let testing_stimuli_standard = [
+    // 1 key correct
     {
-        stimulus: shuffledStim[2],
+        stimulus: shuffledStim[1],
         stimulus2: null,
         data: {
             test_part: "testing",
             reaction: "allergy",
-            condition: "blocking-violation",
-            trial_type: "B1+",
-            correct_response: 49,
-            incorrect_response: 48,
-            stim_left: shuffledStim[2].slice(8),
+            trial_identity: "B+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (0)
+            stim_left: shuffledStim[1].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 1 key
+    }, // 1 key correct
     {
         stimulus: shuffledStim[3],
         stimulus2: null,
         data: {
             test_part: "testing",
-            reaction: "no-reaction",
-            condition: "blocking-confirmation",
-            trial_type: "B2-",
-            correct_response: 48,
-            incorrect_response: 49,
+            reaction: "allegy",
+            trial_identity: "D+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (0)
             stim_left: shuffledStim[3].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 0 key
+    }, // 1 key correct
     {
-        stimulus: shuffledStim[6],
+        stimulus: shuffledStim[5],
         stimulus2: null,
         data: {
             test_part: "testing",
             reaction: "allergy",
-            condition: "blocking-confirmation-control",
-            trial_type: "D1+",
-            correct_response: 49,
-            incorrect_response: 48,
-            stim_left: shuffledStim[6].slice(8),
+            trial_identity: "F+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (0)
+            stim_left: shuffledStim[5].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 1 key
+    }, // 1 key correct
     {
         stimulus: shuffledStim[7],
         stimulus2: null,
         data: {
             test_part: "testing",
-            reaction: "no-reaction",
-            condition: "blocking-violation-control",
-            trial_type: "D2-",
-            correct_response: 48,
-            incorrect_response: 49,
+            reaction: "allergy",
+            trial_identity: "H+",
+            correct_response: 49, // allergy (1)
+            incorrect_response: 48, // no allergy (2)
             stim_left: shuffledStim[7].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 0 key
+    }, // 0 key correct
     {
         stimulus: shuffledStim[8],
-        stimulus2: shuffledStim[9],
+        stimulus2: null,
         data: {
             test_part: "testing",
             reaction: "no-reaction",
-            condition: "no-allergy-control",
-            trial_type: "EF-",
-            correct_response: 48,
-            incorrect_response: 49,
+            trial_identity: "I-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
             stim_left: shuffledStim[8].slice(8),
-            stim_right: shuffledStim[9].slice(8),
+            stim_right: "",
             version: iteration,
         },
-    }, // 0 key
+    }, // 0 key correct
+    {
+        stimulus: shuffledStim[9],
+        stimulus2: null,
+        data: {
+            test_part: "testing",
+            reaction: "no-reaction",
+            trial_identity: "J-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy (1)
+            stim_left: shuffledStim[9].slice(8),
+            stim_right: "",
+            version: iteration,
+        },
+    }, // 0 key correct
     {
         stimulus: shuffledStim[10],
         stimulus2: null,
         data: {
             test_part: "testing",
-            reaction: "allergy",
-            condition: "consistent-allergy",
-            trial_type: "I+",
-            correct_response: 49,
-            incorrect_response: 48,
+            reaction: "no-reaction",
+            trial_identity: "K-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy
             stim_left: shuffledStim[10].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 1 key
+    }, // 0 key correct
     {
         stimulus: shuffledStim[11],
         stimulus2: null,
         data: {
             test_part: "testing",
             reaction: "no-reaction",
-            condition: "consistent-no-allergy",
-            trial_type: "J-",
-            correct_response: 48,
-            incorrect_response: 49,
+            trial_identity: "L-",
+            correct_response: 48, // no allergy (0)
+            incorrect_response: 49, // allergy
             stim_left: shuffledStim[11].slice(8),
             stim_right: "",
             version: iteration,
         },
-    }, // 0 key
+    }
 ];
 
 </script>
