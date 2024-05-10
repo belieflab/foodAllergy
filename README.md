@@ -1,29 +1,38 @@
-variables:
-
-version = 'corrected' version appears after error disovered in testing_stimuli, the consistent-allergy conidition had a stimulus 2 pairing, which should never have been the case. Per Phil Corlett, previous data is not compromised for key trial types. However, low level controls (I-,J+) should not be used in combined analysis of tasks without version 'correct' variable!
-
-# Kamin Blocking
-This is a psychological task designed to track new causal belief formation. It involves subjects learning to associate causes (foods) with effects (allergies in a fictitious patient).
+# Task Overview
+This is a psychological task designed to track new causal belief formation. It involves subjects learning to associate causes (foods) with effects (allergies in a fictitious patient). The task design captures 4 learning phenomena: Kamin Blocking (KB), Conditioned Inhibition (CI), Latent Inhibition (LI), Exctintion (Ex)
 
 The scenario is as follows: subjects imagine they are an allergist and they are charged with figuring our which foods cause allergies in a fictitious patient and which ones do not. They see each meal he has eaten (comprised of one or two different foods) , for 3 seconds then they see whether or not an allergy happened (for one second). When a meal is on the screen, they make a prediction with a 2-alternative button push (allergy or no allergy).
 
-# Alternate versions
-Three new versions were developed that (a) use different instructions/framing contexts (social vs. nonsocial), (b) different stimuli (social avatars vs. fractals), and (c) have shorter format based on (Ongchoco et al., 2023)
+# Alternate Versions
+Three new versions were developed that (a) use different instructions/framing contexts (social vs. nonsocial), (b) different stimuli (social avatars vs. fractals), and (c) have shorter format based on Ongchoco et al. (2023)
 
-# design 
-learning_phase  blocking_phase  testing_phase
-A1+             A1B1+           B1+
-A2+             A2B2+           B2-
-C1-             C1D1+           D1+
-C2-             C2D2+           D2-
-F-              EF-             EF-
-I+              I+              I+
-J-              J-              J-
-Total cues: A1, A2, B1, B2, C1, C2, D1, D2, E, F, I, J,
+# 3-phase Design  
+learning_phase (ph1)    blocking_phase (ph2)    testing_phase (ph3)     condition_name
+A+                      AB+                     B+                      KB_expt 
+                        CD+                     D+                      KB_ctrl
+E+                      EF-                     F+                      CI_expt
+                        GH-                     H+                      CI_ctrl
+I-                      I+                      I-                      LI_expt (ph1 and ph2) & filler (ph3) 
+                        J+                      J-                      LI_ctrl (ph2) & Ex (ph2 and ph3)
+K-                      K-                      K-                      fillers
+                        L-                      L-                      fillers
 
-cues within stim_shuffle: standard version (until 11), short (until 13). SCdO 07/may/2024
-                0   1   2   3   4   5   6   7    8   9   10  11  12  13
-stim_shuffle = [A1, A2, B1, B2, C1, C2, D1, D2,  E,  F,  I,  J,  K,  L]
+p(+|element) = 0.5      p(+|element) = 0.5      p(+|element) = 0.5 
+p(-|element) = 0.5      p(-|element) = 0.5      p(-|element) = 0.5 
+                        p(+|compound) = 0.5
+                        p(-|compound) = 0.5
+
+
+Note: the probability of + or - within each phase is 50% (also in phase 2 this applies for compound and element cues)
+
+# Cues (foods) identity within stim_shuffle 
+                0   1   2   3   4   5   6   7   8   9   10  11
+stim_shuffle = [A,  B,  C,  D,  E,  F,  G,  H,  I,  J,  K,  L]
+
+# Task Duration
+Phase 1: 4 trial types
+in process...
+
 
 # Git branches and latest version
 If you want to use the latest version (v7 wrapper) this will be under the branch v7. Then you can clone it by: git clone --branch v7 --recurse-submodules git@github.com:belieflab/kaminBlocking.git kaminBlocking. The branch master is being used for CAPR project, and will be depricated after the project.

@@ -19,7 +19,7 @@ let ratingQuestions = false;
  * - For single number configs: getRepetitions()
  */
 const repetitions = {
-    production: { learning: 10, blocking: 6, testing: 6 },
+    production: { learning: 6, blocking: 6, testing: 6 },
     debug: { learning: 1, blocking: 1, testing: 1 },
 };
 
