@@ -9,12 +9,12 @@ Three new versions were developed that (a) use different instructions/framing co
 # 3-phase Design  
 learning_phase (ph1)    blocking_phase (ph2)    testing_phase (ph3)     condition_name
 A+                      AB+                     B+                      KB_expt 
-                        CD+                     D+                      KB_ctrl
+C-                      CD+                     D+                      KB_ctrl
 E+                      EF-                     F+                      CI_expt
                         GH-                     H+                      CI_ctrl
 I-                      I+                      I-                      LI_expt (ph1 and ph2) & filler (ph3) 
                         J+                      J-                      LI_ctrl (ph2) & Ex (ph2 and ph3)
-K-                      K-                      K-                      fillers
+                        K-                      K-                      fillers
                         L-                      L-                      fillers
 
 p(+|element) = 0.5      p(+|element) = 0.5      p(+|element) = 0.5 
