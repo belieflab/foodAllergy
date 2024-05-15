@@ -47,8 +47,8 @@ const adminEmail = undefined;
 
 // Set feedback link based on workerId, PROLIFIC_PID, or participantId
 const identifiers = { workerId, PROLIFIC_PID, participantId };
-const identifierKey = Object.keys(identifiers).find(key => identifiers[key] !== undefined);
+const identifierKey = Object.keys(identifiers).find(
+    (key) => identifiers[key] !== undefined
+);
 
-if (identifierKey) {
-    const feedbackLink = `https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0xGKiCrNbAUGwoC?${identifierKey}=${subjectId}`;
-}
+const feedbackLink = `https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0xGKiCrNbAUGwoC?${identifierKey}=${subjectId}`;
