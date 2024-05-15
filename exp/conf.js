@@ -4,7 +4,7 @@
 
 // Debug Mode
 // Options: false, true
-let debug = false; // Default debug mode setting for the experiment
+let debug = true; // Default debug mode setting for the experiment
 
 // if you want to ask questions at the end of the task then true
 let ratingQuestions = false;
@@ -46,7 +46,9 @@ const theme = "white"; // Default theme setting for the user interface
 const adminEmail = undefined;
 
 // Set feedback link based on workerId, PROLIFIC_PID, or participantId
-const identifier = workerId || PROLIFIC_PID || participantId;
-if (identifier !== undefined) {
-    feedbackLink = `"https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0xGKiCrNbAUGwoC?${identifier}`;
+const identifiers = { workerId, PROLIFIC_PID, participantId };
+const identifierKey = Object.keys(identifiers).find(key => identifiers[key] !== undefined);
+
+if (identifierKey) {
+    const feedbackLink = `https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0xGKiCrNbAUGwoC?${identifierKey}=${subjectId}`;
 }
