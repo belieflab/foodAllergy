@@ -29,7 +29,7 @@ const experimentName = "Kamin Blocking"; // Name displayed in the browser title 
 // taskVersion choices: "social_kamin", "kamin", "kamin_gain", "kamin_loss", or "kamin_new" (not working yet)
 // social_kamin involves avatars and focuses on sabotage
 // kamin_loss and kamin_gain focus on learning which fractal images gain or lose points
-const version = "kamin_new";
+const version = "kamin";
 
 const experimentAlias = version; // Unique identifier for the experiment, used in data saving
 
