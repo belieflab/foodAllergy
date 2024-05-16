@@ -42,6 +42,7 @@ if (src_subject_id) {
 
 switch (version) {
     case "kamin":
+    case "kamin_new":
         var fileExtension = ".png";
         var instructions1 =
             '<h2 style="color:black;">In the first part of the experiment, you are asked to imagine that you are an allergist (someone who tries to discover the cause of allergic reactions in people).</h2>' +
