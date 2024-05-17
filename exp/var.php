@@ -129,7 +129,7 @@ let learning_stimuli_standard = [
         stimulus2: null,
         data: {
             test_part: "learning",
-            reaction: "allergy",
+            reaction: "no-reaction",
             trial_identity: "C-",
             correct_response: 48, // no-allergy (0)
             incorrect_response: 49, // allergy (1)
@@ -308,7 +308,7 @@ let testing_stimuli_standard = [
         stimulus2: null,
         data: {
             test_part: "testing",
-            reaction: "allegy",
+            reaction: "allergy",
             trial_identity: "D+",
             correct_response: 49, // allergy (1)
             incorrect_response: 48, // no-allergy (0)
